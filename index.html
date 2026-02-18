@@ -396,7 +396,7 @@
 <body>
 
 <div class="hero">
-  <div class="hero-label">Deep Dive — Hardware Accelerators</div>
+  <div class="hero-label">Deep Dive [Hardware Accelerators]</div>
   <h1>
     <span class="cpu">CPU</span> vs <span class="gpu">GPU</span><br>
     vs <span class="tpu">TPU</span> vs <span class="npu">NPU</span>
@@ -414,7 +414,7 @@
 
 <!-- ===== CPU ===== -->
 <div id="sec-cpu" class="section active">
-  <div class="sec-title">CPU — The General Brain</div>
+  <div class="sec-title">CPU : The General Brain</div>
   <p class="sec-sub">Central Processing Unit · Exists since 1971 · Does everything, specializes in nothing</p>
 
   <div class="card cpu">
@@ -453,14 +453,14 @@
         <div class="p-label">Save result<br>back</div>
       </div>
     </div>
-    <p>Each core also has <strong>L1, L2, L3 cache</strong> — tiny, ultra-fast memory right on the chip so it doesn't always need to go to slow RAM.</p>
-    <p>Modern CPUs also do <strong>out-of-order execution</strong> — if step 4 doesn't depend on step 3, run them simultaneously. They also <strong>predict branches</strong> (if/else) before knowing the answer.</p>
+    <p>Each core also has <strong>L1, L2, L3 cache</strong> : tiny, ultra-fast memory right on the chip so it doesn't always need to go to slow RAM.</p>
+    <p>Modern CPUs also do <strong>out-of-order execution</strong> : if step 4 doesn't depend on step 3, run them simultaneously. They also <strong>predict branches</strong> (if/else) before knowing the answer.</p>
   </div>
 
   <div class="card cpu">
-    <div class="card-label">Visual — Core count</div>
+    <div class="card-label">Visual : Core count</div>
     <div class="core-viz">
-      <div class="core-viz-title">A TYPICAL CPU — 8 POWERFUL CORES</div>
+      <div class="core-viz-title">A TYPICAL CPU : 8 POWERFUL CORES</div>
       <div class="cores-grid" id="cpu-cores"></div>
       <p style="color:var(--muted);font-size:12px;font-family:'Space Mono',monospace;margin-top:16px;text-align:center;">Each core is massive, complex, and can run ANY code independently</p>
     </div>
@@ -479,24 +479,24 @@
       <div class="chip cpu">Complex algorithms</div>
     </div>
     <div class="highlight cpu">
-      <p><strong>Why not use CPU for AI?</strong> Training a simple neural network requires multiplying millions of numbers together (matrix math) simultaneously. A CPU does this one-at-a-time. Even with 32 cores doing 32 at once — the GPU does 10,000 at once. That's the core problem.</p>
+      <p><strong>Why not use CPU for AI?</strong> Training a simple neural network requires multiplying millions of numbers together (matrix math) simultaneously. A CPU does this one-at-a-time. Even with 32 cores doing 32 at once  the GPU does 10,000 at once. That's the core problem.</p>
     </div>
   </div>
 </div>
 
 <!-- ===== GPU ===== -->
 <div id="sec-gpu" class="section">
-  <div class="sec-title">GPU — The Parallel Powerhouse</div>
+  <div class="sec-title">GPU : The Parallel Powerhouse</div>
   <p class="sec-sub">Graphics Processing Unit · Invented for gaming · Accidentally became the backbone of AI</p>
 
   <div class="card gpu">
     <div class="card-label">The Problem it Solved</div>
     <h2>Born from Gaming, Became the AI Revolution</h2>
     <p>In the 90s, rendering 3D graphics meant doing the <em>same math on thousands of pixels simultaneously</em>. The CPU was terrible at this — it's built for one complex task at a time, not a million simple tasks at once.</p>
-    <p>So engineers built a chip that trades <strong>a few smart cores</strong> for <strong>thousands of tiny, simpler cores</strong>. And this design turned out to be perfect for something else entirely — <strong>matrix math in neural networks</strong>.</p>
+    <p>So engineers built a chip that trades <strong>a few smart cores</strong> for <strong>thousands of tiny, simpler cores</strong>. And this design turned out to be perfect for something else entirely  <strong>matrix math in neural networks</strong>.</p>
     <div class="analogy">
       <div class="analogy-title">🎨 Analogy</div>
-      <p>GPU = <strong>An army of 10,000 workers</strong>. Each worker is simple and can only do basic math, but all 10,000 work simultaneously. When the job is "do the same thing to a million numbers" — this army crushes the genius professor.</p>
+      <p>GPU = <strong>An army of 10,000 workers</strong>. Each worker is simple and can only do basic math, but all 10,000 work simultaneously. When the job is "do the same thing to a million numbers"  this army crushes the genius professor.</p>
     </div>
   </div>
 
@@ -505,16 +505,16 @@
     <h2>SIMD — Same Instruction, Multiple Data</h2>
     <p>The key concept is <strong>SIMD</strong> (Single Instruction, Multiple Data). Instead of executing one instruction on one number, GPUs execute <em>one instruction on thousands of numbers simultaneously</em>.</p>
     <p>Inside a GPU, there are:</p>
-    <p>→ <strong>Streaming Multiprocessors (SMs)</strong> — groups of 128 cores each<br>
-       → <strong>CUDA Cores</strong> (NVIDIA) or Shaders (AMD) — thousands of simple ALUs<br>
-       → <strong>Tensor Cores</strong> — special units that do entire matrix multiplications in one clock cycle<br>
-       → <strong>HBM (High Bandwidth Memory)</strong> — stacked memory with enormous bandwidth (~3 TB/s in H100)</p>
+    <p>→ <strong>Streaming Multiprocessors (SMs)</strong> : groups of 128 cores each<br>
+       → <strong>CUDA Cores</strong> (NVIDIA) or Shaders (AMD) thousands of simple ALUs<br>
+       → <strong>Tensor Cores</strong> : special units that do entire matrix multiplications in one clock cycle<br>
+       → <strong>HBM (High Bandwidth Memory)</strong> : stacked memory with enormous bandwidth (~3 TB/s in H100)</p>
   </div>
 
   <div class="card gpu">
-    <div class="card-label">Visual — Core comparison</div>
+    <div class="card-label">Visual : Core comparison</div>
     <div class="core-viz">
-      <div class="core-viz-title">A GPU — THOUSANDS OF TINY CORES</div>
+      <div class="core-viz-title">A GPU : THOUSANDS OF TINY CORES</div>
       <div class="cores-grid" id="gpu-cores"></div>
       <p style="color:var(--muted);font-size:12px;font-family:'Space Mono',monospace;margin-top:16px;text-align:center;">H100 has 16,896 CUDA cores + 528 Tensor Cores. Each core is simple but there are THOUSANDS.</p>
     </div>
@@ -548,7 +548,7 @@
       <p style="color:var(--muted);font-size:11px;font-family:'Space Mono',monospace;margin-top:16px;">GPT-4 does TRILLIONS of these per second during inference. All parallel, all simultaneously.</p>
     </div>
     <div class="highlight gpu">
-      <p>This is why <strong>NVIDIA's Tensor Cores</strong> are such a big deal — they multiply entire 4×4 matrices in a single clock cycle. Without them, you'd need hundreds of regular multiply operations.</p>
+      <p>This is why <strong>NVIDIA's Tensor Cores</strong> are such a big deal  they multiply entire 4×4 matrices in a single clock cycle. Without them, you'd need hundreds of regular multiply operations.</p>
     </div>
   </div>
 
@@ -569,14 +569,14 @@
 
 <!-- ===== TPU ===== -->
 <div id="sec-tpu" class="section">
-  <div class="sec-title">TPU — Google's AI Weapon</div>
+  <div class="sec-title">TPU : Google's AI Weapon</div>
   <p class="sec-sub">Tensor Processing Unit · Created by Google in 2016 · Purpose-built for neural network math</p>
 
   <div class="card tpu">
     <div class="card-label">Why TPU Was Created</div>
     <h2>Even the GPU Wasn't Enough</h2>
-    <p>By 2013, Google realized that if people used voice search for 3 minutes a day, they'd need to <strong>double their data center capacity</strong> just for AI inference with GPUs. GPUs were great, but still too general-purpose and too power-hungry.</p>
-    <p>So Google secretly built a chip that does <strong>only one thing</strong>: <em>matrix multiplications for neural networks</em>. No 3D rendering, no gaming — just pure tensor math. The result was 15–30× more efficient than GPUs for inference tasks.</p>
+    <p>By 2013, Google realized that if people used voice search for 3 minutes a day, they'd need to <strong>double their data center capacity</strong> just for AI inference with GPUs. GPUs were great, but still too general purpose and too power hungry.</p>
+    <p>So Google secretly built a chip that does <strong>only one thing</strong>: <em>matrix multiplications for neural networks</em>. No 3D rendering, no gaming  just pure tensor math. The result was 15–30× more efficient than GPUs for inference tasks.</p>
     <div class="analogy">
       <div class="analogy-title">🏭 Analogy</div>
       <p>TPU = <strong>A specialized factory assembly line</strong>. Designed exclusively to build one product. Insanely fast and efficient at that one thing. Can't do anything else.</p>
@@ -585,19 +585,19 @@
 
   <div class="card tpu">
     <div class="card-label">The Key Innovation</div>
-    <h2>The Systolic Array — The Heart of a TPU</h2>
+    <h2>The Systolic Array : The Heart of a TPU</h2>
     <p>The magic inside a TPU is a <strong>systolic array</strong> — a grid of simple multiply-accumulate (MAC) units arranged so data flows through them like water through pipes, doing matrix math without ever stopping.</p>
     <div class="core-viz">
-      <div class="core-viz-title">SYSTOLIC ARRAY — 256×256 = 65,536 MAC UNITS IN TPU v1</div>
+      <div class="core-viz-title">SYSTOLIC ARRAY : 256×256 = 65,536 MAC UNITS IN TPU v1</div>
       <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:3px;max-width:400px;margin:0 auto;">
         <!-- render mini systolic array -->
         <div id="systolic-grid"></div>
       </div>
       <p style="color:var(--muted);font-size:11px;font-family:'Space Mono',monospace;margin-top:12px;text-align:center;">Data flows horizontally →, partial sums flow vertically ↓. Every cell works every clock cycle. No wasted cycles.</p>
     </div>
-    <p>This is different from a GPU where cores <strong>wait for data</strong> to be loaded. In a systolic array, data <strong>flows continuously</strong> — like a conveyor belt — so every single MAC unit is always working.</p>
+    <p>This is different from a GPU where cores <strong>wait for data</strong> to be loaded. In a systolic array, data <strong>flows continuously</strong> like a conveyor belt  so every single MAC unit is always working.</p>
     <div class="highlight tpu">
-      <p><strong>TPU v4 has 275 trillion operations per second (275 TOPS)</strong> using bfloat16 precision. Each TPU Pod links 4096 chips together via ultra-fast interconnects — Google uses these to train Gemini.</p>
+      <p><strong>TPU v4 has 275 trillion operations per second (275 TOPS)</strong> using bfloat16 precision. Each TPU Pod links 4096 chips together via ultra-fast interconnects  Google uses these to train Gemini.</p>
     </div>
   </div>
 
@@ -606,7 +606,7 @@
     <h2>Key Differences from GPU</h2>
     <p><strong>Less flexible:</strong> TPUs can't run arbitrary CUDA code. They're programmed via XLA (a compiler) and TensorFlow/JAX. You can't just "install CUDA" on a TPU.</p>
     <p><strong>More efficient:</strong> For the specific job of running transformer models, TPUs use significantly less power per operation.</p>
-    <p><strong>Scale differently:</strong> TPU Pods connect thousands of chips with dedicated high-speed optical interconnects, making them better for massive model training than GPU clusters connected by slower NVLink or InfiniBand.</p>
+    <p><strong>Scale differently:</strong> TPU Pods connect thousands of chips with dedicated high speed optical interconnects, making them better for massive model training than GPU clusters connected by slower NVLink or InfiniBand.</p>
     <div class="chips">
       <div class="chip tpu">Training LLMs</div>
       <div class="chip tpu">Google Search AI</div>
@@ -619,24 +619,24 @@
 
 <!-- ===== NPU ===== -->
 <div id="sec-npu" class="section">
-  <div class="sec-title">NPU — AI on Your Device</div>
+  <div class="sec-title">NPU : AI on Your Device</div>
   <p class="sec-sub">Neural Processing Unit · Embedded in phones & laptops · Low power AI acceleration</p>
 
   <div class="card npu">
     <div class="card-label">Why NPU Exists</div>
     <h2>The Problem: You Can't Send Everything to the Cloud</h2>
     <p>Running AI on a GPU server means: your data leaves your device, there's network latency, it costs money per query, and it drains your battery waiting for responses.</p>
-    <p>For real-time tasks — face unlock, voice recognition, camera AI, live translation — you need AI that runs <strong>on-device, instantly, using milliwatts of power</strong>. That's what an NPU does.</p>
+    <p>For realtime tasks : face unlock, voice recognition, camera AI, live translation , you need AI that runs <strong>on device, instantly, using milliwatts of power</strong>. That's what an NPU does.</p>
     <div class="analogy">
       <div class="analogy-title">⚡ Analogy</div>
-      <p>NPU = <strong>A tiny, super-efficient specialist</strong> embedded in your phone. Doesn't need the internet. Runs constantly in the background using almost no battery.</p>
+      <p>NPU = <strong>A tiny, super efficient specialist</strong> embedded in your phone. Doesn't need the internet. Runs constantly in the background using almost no battery.</p>
     </div>
   </div>
 
   <div class="card npu">
     <div class="card-label">How it works</div>
     <h2>Efficiency Over Raw Power</h2>
-    <p>NPUs are designed for <strong>inference only</strong> (running already-trained models), not training. The key design goals are completely different from GPUs/TPUs:</p>
+    <p>NPUs are designed for <strong>inference only</strong> (running already trained models), not training. The key design goals are completely different from GPUs/TPUs:</p>
 
     <div class="stat-bars">
       <div class="stat-row">
@@ -652,12 +652,12 @@
     </div>
 
     <p>NPUs achieve this through:</p>
-    <p>→ <strong>INT8 / INT4 quantization</strong> — instead of 32-bit floats, they use tiny 4-bit or 8-bit integers. Less precision, but tiny models often don't need full precision for inference.</p>
-    <p>→ <strong>Weight caching</strong> — model weights stay loaded in on-chip SRAM so there's no memory bandwidth waste.</p>
-    <p>→ <strong>Dedicated datapath</strong> — the circuit is hardwired for specific operations. No control logic overhead like in GPUs.</p>
+    <p>→ <strong>INT8 / INT4 quantization</strong> : instead of 32-bit floats, they use tiny 4-bit or 8-bit integers. Less precision, but tiny models often don't need full precision for inference.</p>
+    <p>→ <strong>Weight caching</strong> : model weights stay loaded in on-chip SRAM so there's no memory bandwidth waste.</p>
+    <p>→ <strong>Dedicated datapath</strong> : the circuit is hardwired for specific operations. No control logic overhead like in GPUs.</p>
 
     <div class="highlight npu">
-      <p>Apple's Neural Engine (in M4 chip) can do <strong>38 trillion operations per second</strong> while using only a fraction of the power of a GPU. It runs Face ID, Siri, camera processing, and on-device LLMs like Apple Intelligence.</p>
+      <p>Apple's Neural Engine (in M4 chip) can do <strong>38 trillion operations per second</strong> while using only a fraction of the power of a GPU. It runs Face ID, Siri, camera processing, and on device LLMs like Apple Intelligence.</p>
     </div>
   </div>
 
@@ -685,37 +685,37 @@
 <!-- ===== COMPARE ===== -->
 <div id="sec-compare" class="section">
   <div class="sec-title">The Full Picture</div>
-  <p class="sec-sub">Why each chip exists, what it's optimized for, and where it lives</p>
+  <p class="sec-sub">Why each chip exists, what its optimized for, and where it lives</p>
 
   <div class="card" style="border-top:2px solid var(--accent)">
-    <div class="card-label" style="color:var(--accent)">Timeline — Why they came in this order</div>
+    <div class="card-label" style="color:var(--accent)">Timeline : Why they came in this order</div>
     <h2>The Evolution</h2>
     <div class="timeline">
       <div class="t-item">
         <div class="t-year">1971</div>
         <div class="t-content">
           <h4>CPU is born (Intel 4004)</h4>
-          <p>General-purpose computing begins. One task at a time, but can do any task. Rules computing for 30 years.</p>
+          <p>General purpose computing begins. One task at a time, but can do any task. Rules computing for 30 years.</p>
         </div>
       </div>
       <div class="t-item">
         <div class="t-year">1999</div>
         <div class="t-content">
           <h4>GPU invented for gaming (NVIDIA GeForce 256)</h4>
-          <p>3D gaming needed parallel pixel math the CPU couldn't handle. GPUs built for that — thousands of small cores.</p>
+          <p>3D gaming needed parallel pixel math the CPU couldn't handle. GPUs built for that  thousands of small cores.</p>
         </div>
       </div>
       <div class="t-item">
         <div class="t-year">2006</div>
         <div class="t-content">
-          <h4>CUDA launched — GPUs repurposed for science</h4>
+          <h4>CUDA launched : GPUs repurposed for science</h4>
           <p>NVIDIA lets programmers use GPU for non-graphics work. Scientists use it for simulations. AI researchers notice.</p>
         </div>
       </div>
       <div class="t-item">
         <div class="t-year">2012</div>
         <div class="t-content">
-          <h4>AlexNet — Deep Learning on GPU changes everything</h4>
+          <h4>AlexNet : Deep Learning on GPU changes everything</h4>
           <p>Geoffrey Hinton's team wins ImageNet using GPUs. 10× faster than CPU. AI race begins.</p>
         </div>
       </div>
@@ -723,14 +723,14 @@
         <div class="t-year">2016</div>
         <div class="t-content">
           <h4>TPU v1 deployed by Google</h4>
-          <p>GPUs still too general. Google builds TPU for inference — 15–30× more efficient for their specific neural nets.</p>
+          <p>GPUs still too general. Google builds TPU for inference  15–30× more efficient for their specific neural nets.</p>
         </div>
       </div>
       <div class="t-item">
         <div class="t-year">2017</div>
         <div class="t-content">
-          <h4>Apple Neural Engine — NPU in consumer devices</h4>
-          <p>iPhone X ships with dedicated on-device AI chip. Face ID, Animoji run in real-time with no cloud needed.</p>
+          <h4>Apple Neural Engine NPU in consumer devices</h4>
+          <p>iPhone X ships with dedicated on-device AI chip. Face ID, Animoji run in real time with no cloud needed.</p>
         </div>
       </div>
       <div class="t-item">
@@ -809,12 +809,11 @@
   </div>
 
   <div class="card" style="border-top:2px solid var(--accent)">
-    <div class="card-label" style="color:var(--accent)">Mental Model — One Sentence Each</div>
-    <h2>The TL;DR</h2>
-    <div class="highlight cpu"><p><strong>CPU:</strong> One genius solving hard problems sequentially. Great for complex logic, bad at doing a million simple things at once.</p></div>
-    <div class="highlight gpu"><p><strong>GPU:</strong> 10,000 workers doing the same simple math at the same time. Born for gaming graphics, turned out perfect for neural network math.</p></div>
-    <div class="highlight tpu"><p><strong>TPU:</strong> A factory assembly line built exclusively for neural network math. 30× more power-efficient than GPU for this one job.</p></div>
-    <div class="highlight npu"><p><strong>NPU:</strong> A tiny, always-on AI chip embedded in your phone or laptop. Runs AI at milliwatt power levels so you don't need the internet or drain your battery.</p></div>
+    <div class="card-label" style="color:var(--accent)">Mental Model  One Sentence Each</div>
+    <div class="highlight cpu"><p><strong>CPU: </strong> One genius solving hard problems sequentially. Great for complex logic, bad at doing a million simple things at once.</p></div>
+    <div class="highlight gpu"><p><strong>GPU: </strong> 10,000 workers doing the same simple math at the same time. Born for gaming graphics, turned out perfect for neural network math.</p></div>
+    <div class="highlight tpu"><p><strong>TPU: </strong> A factory assembly line built exclusively for neural network math. 30× more power-efficient than GPU for this one job.</p></div>
+    <div class="highlight npu"><p><strong>NPU: </strong> A tiny, always-on AI chip embedded in your phone or laptop. Runs AI at milliwatt power levels so you don't need the internet or drain your battery.</p></div>
   </div>
 </div>
 
